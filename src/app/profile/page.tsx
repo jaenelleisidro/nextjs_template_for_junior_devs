@@ -1,7 +1,22 @@
+'use client';
+
+import { useState, useEffect } from "react";
+import api from "../common/Api";
+
 export default function Profile() {
+
+    const [user, setUser] = useState({ email: null })
+    useEffect(() => {
+        (async () => {
+            const res = await api.get('users/me');
+            const user = res?.data;
+            setUser(user);
+            console.log(user)
+        })();
+    }, []);
+
+
     return (
-        <div>
-            <h1>Profile</h1>
-        </div>
+        <h1> {user.email || ''}</h1>
     );
 }
