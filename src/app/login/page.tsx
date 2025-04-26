@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import api from "../common/Api";
+import simpleFetch from "../common/SimpleFetch";
 
 export default function Login() {
 
@@ -13,7 +14,9 @@ export default function Login() {
   const logIn = async () => {
 
     try {
-      const res = await api.post(`/auth/login`, { username: email, password });
+
+      const res = await simpleFetch('auth/login',{method:'POST', body:{ username: email, password }});
+
       const accessToken = res?.data?.accessToken;
 
       if (!accessToken) { throw Error('login failed') }

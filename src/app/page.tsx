@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import api from "./common/Api";
+import simpleFetch from "./common/SimpleFetch";
 
 export default function Home() {
 
@@ -8,12 +8,13 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const res = await api.get('files');
-      const files = res?.data?.data || [];
+        const res = await simpleFetch('files');
+        const files = res?.data?.data || [];
       setFiles(files);
       console.log(files)
     })();
   }, []);
+
 
   return (
     <div className="item-container centercontent fillparent">

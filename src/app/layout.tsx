@@ -15,9 +15,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <div className="menu">
                         Menu
                         <ol>
-                            <li>
+                        <li>
                                 <Link href="/">Home</Link>
                             </li>
+                            <li>
+                                <Link href="/items_ssf_ssg">Items SSF-SSG</Link>
+                            </li>                            
                             <li>
                                 <Link href="/about">About Us</Link>
                             </li>
