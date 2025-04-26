@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="item-container centercontent fillparent">
-      {files.map((file: any) => <div>{file.name}</div>)}
+      {files.map((file: any) => <div key={file._id}>{file.name}</div>)}
     </div>
   );
 }

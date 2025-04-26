@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import "./globals.css";
+import Link from 'next/link';
 
 interface RootLayoutProps {
     children: ReactNode;
@@ -15,16 +16,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
                         Menu
                         <ol>
                             <li>
-                                <a href="/">Home</a>
+                                <Link href="/">Home</Link>
                             </li>
                             <li>
-                                <a href="about">About Us</a>
+                                <Link href="/about">About Us</Link>
                             </li>
                             <li>
-                                <a href="profile">profile</a>
+                                <Link href="/profile">profile</Link>
                             </li>
                             <li>
-                                <a href="login">Login</a>
+                                <Link href="/login">Login</Link>
                             </li>
                         </ol>
                     </div>
